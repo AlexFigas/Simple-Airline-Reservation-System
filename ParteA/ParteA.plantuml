@@ -1,0 +1,129 @@
+@startuml
+
+
+  
+
+      class tps.tp4.ParteA.Bilhete {
+          {static} ~ log : Logger
+          {static} - bilhetes : List<Bilhete>
+          - horaPartida : String
+          - lugar : int
+          - numeroVoo : int
+          - preco : double
+          + Bilhete()
+          + getHoraPartida()
+          {static} + getListaBilhetes()
+          + getLugar()
+          + getNumeroVoo()
+          + getPassageiro()
+          + getPreco()
+          + getVoo()
+          + setPreco()
+          + toString()
+      }
+
+
+  
+
+      class tps.tp4.ParteA.Login {
+          {static} ~ log : Logger
+          {static} - login : List<Login>
+          - password : String
+          - username : String
+          + Login()
+          {static} + equals()
+          {static} + getListaLogin()
+          + getPassword()
+          + getUsername()
+          + toString()
+      }
+
+
+  
+
+      class tps.tp4.ParteA.Membro {
+          {static} ~ log : Logger
+          {static} - membros : List<Membro>
+          - mesesDeSubscricao : int
+          + Membro()
+          + desconto()
+          {static} + getListaMembros()
+          + getMesesDeSubscricao()
+          + toString()
+      }
+
+
+  
+
+      class tps.tp4.ParteA.NaoMembro {
+          {static} ~ log : Logger
+          {static} - naoMembros : List<NaoMembro>
+          + NaoMembro()
+          + desconto()
+          {static} + getListaNaoMembros()
+          + toString()
+      }
+
+
+  
+
+      abstract class tps.tp4.ParteA.Passageiro {
+          {static} ~ log : Logger
+          - bilhetes : List<Bilhete>
+          - idade : int
+          - nome : String
+          + Passageiro()
+          + comprar()
+          {abstract} + desconto()
+          + getIdade()
+          + getListaBilhetes()
+          + getNome()
+      }
+
+
+  
+
+      class tps.tp4.ParteA.Voo {
+          {static} ~ log : Logger
+          - capacidade : int
+          - destino : String
+          - distancia : int
+          - horaPartida : String
+          - lugares : int[]
+          {static} - numero : int
+          - numeroAssentosDisponiveis : int
+          - numeroVoo : int
+          - origem : String
+          - passageiros : List<Passageiro>
+          - precoOriginal : double
+          {static} - voos : List<Voo>
+          + Voo()
+          + addPassageiro()
+          + getCapacidade()
+          + getDestino()
+          + getDistancia()
+          + getHoraPartida()
+          + getListaPassageiros()
+          {static} + getListaVoos()
+          + getNumeroAssentosDisponiveis()
+          + getNumeroLugar()
+          + getNumeroVoo()
+          + getOrigem()
+          + getPreco()
+          + getPrecoOriginal()
+          + reservar()
+          + setNumeroAssentosDisponiveis()
+          + toString()
+          - apenasValor()
+          - fill()
+      }
+
+
+  
+  tps.tp4.ParteA.Login -down- tps.tp4.ParteA.Passageiro
+  tps.tp4.ParteA.Bilhete o-left- tps.tp4.ParteA.Passageiro : passageiro
+  tps.tp4.ParteA.Bilhete o-down- tps.tp4.ParteA.Voo : voo
+  tps.tp4.ParteA.Membro -right-|> tps.tp4.ParteA.Passageiro
+  tps.tp4.ParteA.NaoMembro -up-|> tps.tp4.ParteA.Passageiro
+
+@enduml

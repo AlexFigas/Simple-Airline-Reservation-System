@@ -1,0 +1,28 @@
+Classes: Passageiro, Aviao, Bilhetes
+
+	Passageiro:
+		ArrayList Bilhetes
+		
+		nome
+		cc
+		idade
+		classe // económica, executiva e 1ª classe
+		
+		login
+		comprarBilhetes(boolean subscrição, int numeroBilhete)  // subscrição anual bilhete 10% mais barato
+		anularViagem
+	
+	Voo:
+		ArrayList[MAXBILHETES] passageiros
+		ArrayList<departure time, arrival time, stop>
+
+	Aviao:
+		id
+		matricula
+		
+		
+	Bilhetes:
+        aviao
+		data
+		numero
+		passageiro

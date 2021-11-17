@@ -1,0 +1,202 @@
+@startuml
+
+
+      class tps.tp4.ParteB.ListagemBilhetesGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - bilhetesPassageiroTable : JTable
+          - mainPanel : JPanel
+          + ListagemBilhetesGUI()
+          - createUIComponents()
+      }
+
+
+  
+
+      class tps.tp4.ParteB.LoginGUI {
+          {static} ~ log : Logger
+          - loginButton : JButton
+          - loginImage : JLabel
+          - mainPanel : JPanel
+          - mostrarPasswordCheckBox : JCheckBox
+          - passwordText : JPasswordField
+          - registerButton : JButton
+          - usernameText : JTextField
+          + LoginGUI()
+      }
+
+
+
+      class tps.tp4.ParteB.MenuGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - bilhetesButton : JButton
+          - mainPanel : JPanel
+          - menuImage : JLabel
+          - passageirosButton : JButton
+          - vooButton : JButton
+          + MenuGUI()
+      }
+
+
+  
+
+      class tps.tp4.ParteB.PassageirosGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - mainPanel : JPanel
+          - membrosButton : JButton
+          - mostrarListaPassageirosButton : JButton
+          - naoMembrosButton : JButton
+          - passageirosImage : JLabel
+          + PassageirosGUI()
+      }
+
+
+  
+
+      class tps.tp4.ParteB.PassageirosGUI.ComprarGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - mainPanel : JPanel
+          - passageiroInfoText : JTextField
+          - voosTable : JTable
+          + ComprarGUI()
+          - createUIComponents()
+      }
+
+
+  
+
+
+
+
+  
+
+      class tps.tp4.ParteB.PassageirosGUI.ListagemPassageirosGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - mainPanel : JPanel
+          - membrosTable : JTable
+          - naoMembrosTable : JTable
+          ~ ListagemPassageirosGUI()
+          - createUIComponents()
+      }
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+      class tps.tp4.ParteB.PassageirosGUI.MembroGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - criarButton : JButton
+          - idadeText : JTextField
+          - mainPanel : JPanel
+          - mesesDeSubscricaoText : JTextField
+          - nomeText : JTextField
+          + MembroGUI()
+      }
+
+
+  
+
+      class tps.tp4.ParteB.PassageirosGUI.NaoMembroGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - criarButton : JButton
+          - idadeText : JTextField
+          - mainPanel : JPanel
+          - nomeText : JTextField
+          + NaoMembroGUI()
+      }
+
+
+  
+
+      class tps.tp4.ParteB.VooGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - criarButton : JButton
+          - listagemButton : JButton
+          - mainPanel : JPanel
+          - vooImage : JLabel
+          + VooGUI()
+      }
+
+
+  
+
+      class tps.tp4.ParteB.VooGUI.CriarVooGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - capacidadeText : JTextField
+          - criarButton : JButton
+          - destinoText : JTextField
+          - distanciaText : JTextField
+          - horaDePartidaText : JTextField
+          - mainPanel : JPanel
+          - origemText : JTextField
+          + CriarVooGUI()
+      }
+
+
+  
+
+      class tps.tp4.ParteB.VooGUI.ListagemPassageirosVooGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - mainPanel : JPanel
+          - passageirosVooTable : JTable
+          - vooText : JTextField
+          ~ ListagemPassageirosVooGUI()
+          - createUIComponents()
+      }
+
+
+  
+
+      class tps.tp4.ParteB.VooGUI.ListagemVooGUI {
+          {static} ~ log : Logger
+          - backButton : JButton
+          - mainPanel : JPanel
+          - voosTable : JTable
+          ~ ListagemVooGUI()
+          - createUIComponents()
+      }
+
+
+  
+
+
+
+
+  
+  tps.tp4.ParteB.LoginGUI -down- tps.tp4.ParteB.MenuGUI
+  tps.tp4.ParteB.MenuGUI -right- tps.tp4.ParteB.PassageirosGUI
+  tps.tp4.ParteB.MenuGUI -left- tps.tp4.ParteB.VooGUI
+  tps.tp4.ParteB.MenuGUI -down- tps.tp4.ParteB.ListagemBilhetesGUI
+  tps.tp4.ParteB.PassageirosGUI +-right- tps.tp4.ParteB.PassageirosGUI.ComprarGUI
+  tps.tp4.ParteB.PassageirosGUI +-up- tps.tp4.ParteB.PassageirosGUI.ListagemPassageirosGUI
+  tps.tp4.ParteB.PassageirosGUI +-down- tps.tp4.ParteB.PassageirosGUI.MembroGUI
+  tps.tp4.ParteB.PassageirosGUI +-down- tps.tp4.ParteB.PassageirosGUI.NaoMembroGUI
+  tps.tp4.ParteB.VooGUI +-left- tps.tp4.ParteB.VooGUI.CriarVooGUI
+  tps.tp4.ParteB.VooGUI +-down- tps.tp4.ParteB.VooGUI.ListagemPassageirosVooGUI
+  tps.tp4.ParteB.VooGUI +-down- tps.tp4.ParteB.VooGUI.ListagemVooGUI
+
+
+@enduml
