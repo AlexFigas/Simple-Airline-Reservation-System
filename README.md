@@ -40,5 +40,3 @@ This app shoud offer the following functionalities:
 * Modify flight.
 * Remove flight.
 * List all passengers of a flight.
-
-After every letter, click enter to execute the move.
