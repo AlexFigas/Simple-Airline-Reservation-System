@@ -1,4 +1,4 @@
-# Simple Airline Reservation System - Developed in Java
+# Airline Reservation System - Developed in Java
 
 This project was carried out in my second semester, for the course unit of Modeling and Programming.
 
