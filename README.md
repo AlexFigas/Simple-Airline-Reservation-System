@@ -4,7 +4,7 @@ This project was carried out in my second semester, for the course unit of Model
 
 ### Dependencies
 
-* Java 14
+* Java
 * Log4j
 
 ### Executing program
